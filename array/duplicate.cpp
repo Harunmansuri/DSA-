@@ -1,28 +1,41 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-
-int findDuplicate(int arr[], int n) {
-    int ans = 0;
-    for(int i=0; i<n; i++){
-        ans = ans^arr[i];
-    }
-    for(int i=1; i<n; i++){
-        ans = ans^i;
+// For multiple duplicate elements
+vector<int> findDuplicates(vector<int>& nums) {
+    vector<int> ans;
+    int n = nums.size();
+    for (int i = 0; i < n; i++) {
+        int x = abs(nums[i]);
+        if (nums[x - 1] < 0) {
+            ans.push_back(x);
+        }
+        nums[x - 1] = -nums[x - 1];
     }
     return ans;
 }
-int main() {
 
+int main() {
     int n;
-    cout<<"enter the size of array:";
+    cout << "Enter the size of array: ";
     cin >> n;
-    
-    int arr[n];
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
+
+    vector<int> nums(n);
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
     }
-    int ans = findDuplicate(arr, n);
-    cout << ans << endl;
+
+    vector<int> ans = findDuplicates(nums);
+
+    if (ans.empty()) {
+        cout << "No duplicates found" << endl;
+    } else {
+        cout << "Duplicates: ";
+        for (int x : ans) {
+            cout << x << " ";
+        }
+        cout << endl;
+    }
+    return 0;
 }
