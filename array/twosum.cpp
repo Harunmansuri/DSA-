@@ -1,8 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+/*1 approuch 2 pass hastable 
+2 one pass hastable 
+o(n2) solution 
+sort and two pointer solution
+*/
+
 vector<int> twosum(vector<int>& arr, int target, int n) {
-    unordered_map<int, int> mp; 
+    //one pass solution
+   /* unordered_map<int, int> mp; 
     for (int i = 0; i < n; i++) {
         int num = arr[i];
         int complement = target - num;
@@ -11,7 +19,19 @@ vector<int> twosum(vector<int>& arr, int target, int n) {
         }
         mp[num] = i; 
     }
-    return {}; // no pair found
+    return {}; // no pair found*/
+
+   /*
+   o(n2) solution
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]+arr[j] == target){
+                return {i,j};
+            }
+        }
+       
+    }
+    return {};*/
 }
 
 int main() {
