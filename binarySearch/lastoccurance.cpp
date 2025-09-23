@@ -54,3 +54,6 @@ int main()
     return 0;
 }
    
+
+
+//count occunarnes of an element  return left - right +1;
