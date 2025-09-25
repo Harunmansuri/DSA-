@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int findPivot(vector<int> &arr, int n)
+int peakindex(vector<int> &arr, int n)
 {
     int start = 0;
     int end = n - 1;
@@ -34,6 +34,6 @@ int main()
     {
         cin >> arr[i];
     }
-    int ans = findPivot(arr, n);
+    int ans = peakindex(arr, n);
     cout << "The peak index is: " << ans << endl;
 }
