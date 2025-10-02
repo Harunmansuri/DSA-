@@ -49,12 +49,12 @@ bool permutation(string s1, string s2)
     while (i < s2.length())
     {
         // Add new character in window
-        char newChar = s2[i];
-        count2[newChar - 'a']++;
+        char newChar = s2[i] -'a';
+        count2[newChar]++;
 
         // Remove old character from window
-        char oldChar = s2[i - windowSize];
-        count2[oldChar - 'a']--;
+        char oldChar = s2[i - windowSize] - 'a';
+        count2[oldChar]--;
 
         // Compare after sliding
         if (checkEqual(count1, count2))
