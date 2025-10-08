@@ -6,6 +6,7 @@ using namespace std;
 bool search(vector<vector<int>> &arr, int n, int m, int target){
     int r=0, c=m-1;
     while(r<n && c>=0){
+        
         if(arr[r][c]==target) return true;
         else if(arr[r][c]<target) r++;
         else c--;
