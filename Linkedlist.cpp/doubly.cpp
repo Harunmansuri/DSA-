@@ -50,6 +50,39 @@ void insertAttail(Node *&tail, int data)
     newnode->prev = tail;
     tail = newnode;
 }
+// position starts from 1
+void insertAtposition(Node *&tail, Node *&head, int position, int d)
+{
+    // insert at start
+    if (position == 1)
+    {
+        insertAtHead(head, d);
+        return;
+    }
+// insert at end
+    Node *temp = head;
+    int cnt = 1;
+    // traverse the list to find the position to insert
+    while (temp->next != NULL && cnt < position - 1)
+    {
+        temp = temp->next;
+        cnt++;
+    }
+ // insert at last position
+    if (temp->next == NULL)
+    {
+        insertAttail(tail, d);
+        return;
+    }
+// insert at middle position
+    Node *newnode = new Node(d);
+    newnode->next = temp->next;
+    
+    temp->next->prev = newnode;
+    temp->next = newnode;
+    newnode->prev = temp;
+    
+}
 int main()
 {
     Node *node1 = new Node(10);
@@ -61,12 +94,13 @@ int main()
     printList(head);
     insertAtHead(head, 12);
     printList(head);
-     insertAtHead(head, 18);
+    insertAtHead(head, 18);
     printList(head);
-     insertAtHead(head, 16);
+    insertAtHead(head, 16);
     printList(head);
-
     insertAttail(tail, 25);
+    printList(head);
+    insertAtposition(tail,head,2,100);
     printList(head);
 
     return 0;
