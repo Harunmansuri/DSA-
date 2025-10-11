@@ -38,17 +38,34 @@ int getLength(Node *head)
 }
 void insertAtHead(Node *&head, int data)
 {
-    Node *newNode = new Node(data);
-    newNode->next = head;
-    head->prev = newNode;
-    head = newNode;
+    if (head == NULL)
+    {
+        Node *newNode = new Node(data);
+        head = newNode;
+    }
+    else
+    {
+
+        Node *newNode = new Node(data);
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+    }
 }
 void insertAttail(Node *&tail, int data)
 {
-    Node *newnode = new Node(data);
-    tail->next = newnode;
-    newnode->prev = tail;
-    tail = newnode;
+    if (tail == NULL)
+    {
+        Node *newNode = new Node(data);
+        tail = newNode;
+    }
+    else
+    {
+        Node *newNode = new Node(data);
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
+    }
 }
 // position starts from 1
 void insertAtposition(Node *&tail, Node *&head, int position, int d)
@@ -59,7 +76,7 @@ void insertAtposition(Node *&tail, Node *&head, int position, int d)
         insertAtHead(head, d);
         return;
     }
-// insert at end
+    // insert at end
     Node *temp = head;
     int cnt = 1;
     // traverse the list to find the position to insert
@@ -68,20 +85,19 @@ void insertAtposition(Node *&tail, Node *&head, int position, int d)
         temp = temp->next;
         cnt++;
     }
- // insert at last position
+    // insert at last position
     if (temp->next == NULL)
     {
         insertAttail(tail, d);
         return;
     }
-// insert at middle position
+    // insert at middle position
     Node *newnode = new Node(d);
     newnode->next = temp->next;
-    
+
     temp->next->prev = newnode;
     temp->next = newnode;
     newnode->prev = temp;
-    
 }
 int main()
 {
@@ -100,7 +116,11 @@ int main()
     printList(head);
     insertAttail(tail, 25);
     printList(head);
-    insertAtposition(tail,head,2,100);
+    insertAtposition(tail, head, 2, 100);
+    printList(head);
+      insertAtposition(tail, head, 1, 200);
+    printList(head);
+      insertAtposition(tail, head, 7, 600);
     printList(head);
 
     return 0;
