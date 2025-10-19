@@ -47,6 +47,7 @@ Node *merge(Node *&head1, Node *&head2)
 
     return dummy->next;
 }
+
 /*Node *merge(Node *&first, Node *&second)
 {
 
