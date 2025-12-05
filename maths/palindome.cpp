@@ -15,7 +15,7 @@ bool palindrome(int digit) {
         x = x / 10;
     }
 
-    return (rev == digit);
+    return (rev == x);
 }
 
 int main() {
