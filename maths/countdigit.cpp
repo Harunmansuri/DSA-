@@ -22,6 +22,7 @@ int countDigit(int n)
     return count;
 }
 
+
 int main()
 {
     int n = 58964;
@@ -65,4 +66,11 @@ int main()
     int n = 58964;
     cout << countDigit(n); 
     return 0;
+}
+
+int cnt =0;
+while(n>0){
+    n%10;
+    cnt++;
+    n= n/10;
 }
