@@ -22,18 +22,18 @@ void displayDivisors(int n)
         if (n % i == 0)
         {
             list.push_back(i);
-            if ((n / i) != i)
+            if ((n / i) != i)//O(squreroot of N)
             {
                 list.push_back(n / i);
             }
         }
     }
-    sort(list.begin(), list.end());
+    sort(list.begin(), list.end());//(nlogn)
     for (int i = 0; i < list.size(); i++)
     {
-        cout << list[i] << " ";
+        cout << list[i] << " ";//O(n)
     }
-    cout << endl;
+    cout << endl; 
 }
 
 int main()
