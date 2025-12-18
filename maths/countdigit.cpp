@@ -71,6 +71,6 @@ int main()
 int cnt =0;
 while(n>0){
     n%10;
-    cnt++;
+    cnt++;//log base 10(n);
     n= n/10;
 }
