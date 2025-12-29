@@ -7,8 +7,8 @@ using namespace std;
     if(n<1){
         return allsum;
 
-    }
-    return sum(n-1,allsum+n);
+    } 
+    return sum(n-1,allsum+n); 
 }
 */
 
@@ -19,7 +19,7 @@ int sum(int n)//functional recursion
 
     }
     if(n==0){
-        return 0;
+        return 0; 
     }
     return n+sum(n-1);
 }
