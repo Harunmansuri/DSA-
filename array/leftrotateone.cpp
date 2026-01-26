@@ -12,9 +12,8 @@ void leftrotateone(vector<int> &arr, int n)
 }
 
 // Right rotate array by k positions
-void drotate(vector<int> &arr, int n, int k)
+/*void drotate(vector<int> &arr, int n, int k)
 {
-
 
     k = k % n;
     // Step 1: store first k elements
@@ -36,7 +35,29 @@ void drotate(vector<int> &arr, int n, int k)
     {
         arr[i] = temp[i - (n - k)];
     }
+}*/
+void reverseArr(vector<int> &arr, int l, int r) {
+    while (l < r) {
+        swap(arr[l], arr[r]);
+        l++;
+        r--;
+    }
 }
+
+// Left rotate by k using reversal
+void drotate(vector<int> &arr, int n, int k) {
+    k = k % n;
+
+    // Step 1: reverse first k elements
+    reverseArr(arr, 0, k - 1);
+
+    // Step 2: reverse remaining elements
+    reverseArr(arr, k, n - 1);
+
+    // Step 3: reverse whole array
+    reverseArr(arr, 0, n - 1);
+}
+
 
 void printarray(vector<int> &arr, int n)
 {
