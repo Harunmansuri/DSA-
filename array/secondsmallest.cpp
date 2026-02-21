@@ -12,7 +12,7 @@ int secondsmallest(vector<int> &arr) {
         if (arr[i] < small) {
             secondsmall = small;
             small = arr[i];
-        }
+        } 
         else if (arr[i] < secondsmall && arr[i] != small) {
             secondsmall = arr[i];
         }
