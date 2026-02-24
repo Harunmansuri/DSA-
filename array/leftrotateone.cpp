@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Left rotate array by one position
+// Time complexity: O(n)
+// Space complexity: O(1)
+// Approach: store first element in temp variable, shift remaining elements to left and put temp at the end
 void leftrotateone(vector<int> &arr, int n)
 {
     int temp = arr[0];
@@ -12,6 +15,9 @@ void leftrotateone(vector<int> &arr, int n)
 }
 
 // Right rotate array by k positions
+// Time complexity: O(n)
+// Space complexity: O(k)
+// Approach: store first k elements in temp vector, shift remaining elements to left and put temp at the end
 /*void drotate(vector<int> &arr, int n, int k)
 {
 
@@ -19,7 +25,7 @@ void leftrotateone(vector<int> &arr, int n)
     // Step 1: store first k elements
     vector<int> temp;
     for (int i = 0; i < k; i++)
-    {
+    { 
         temp.push_back(arr[i]);
     }
     // Step 2: shift remaining elements to left

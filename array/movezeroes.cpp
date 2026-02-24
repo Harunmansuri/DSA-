@@ -2,8 +2,7 @@
 #include <vector>
 using namespace std;
 
-
-void moveZeroes(vector<int> &arr, int n) {
+/*void moveZeroes(vector<int> &arr, int n) {
     vector<int> temp;
 
     // Step 1: store non-zero elements
@@ -22,6 +21,7 @@ void moveZeroes(vector<int> &arr, int n) {
         arr[idx++] = 0;
     }
 }
+    */
 
 /*void moveZeroes(vector<int> &arr) {
     int n = arr.size();
@@ -52,13 +52,39 @@ void moveZeroes(vector<int> &arr, int n) {
     }
 }
 */
-int main() {
+
+void moveZeroes(vector<int> &arr)
+{
+    int n = arr.size();
+    int j = -1;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == 0)
+        {
+            j = i;
+            break;
+        }
+    }
+
+    for (int i = j + 1; i < n; i++)
+    {
+        if (arr[i] != 0)
+        {
+            swap(arr[i], arr[j]);
+            j++;
+        }
+    }
+}
+int main()
+{
     int n;
     cin >> n;
     vector<int> arr(n);
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
 
-    moveZeroes(arr,n);
-    for (int x : arr) cout << x << " ";
+    moveZeroes(arr);
+    for (int x : arr)
+        cout << x << " ";
     return 0;
 }
