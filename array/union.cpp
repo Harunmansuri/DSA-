@@ -21,7 +21,7 @@ using namespace std;
 
     
     i=0;
-    for(auto it:st){
+    for(auto it:st){ 
     union[i++] = it;
     }
     return unionARR;
