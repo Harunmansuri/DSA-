@@ -52,7 +52,7 @@ int main() {
 
     string lineAfterNumber;
     getline(cin, lineAfterNumber);
-
+     
     cout << "Number: " << number << endl;
     cout << "Line After Number: " << lineAfterNumber << endl;
 
