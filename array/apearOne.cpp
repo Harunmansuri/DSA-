@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// nlogn sortin g apporiuch
+// nlogn sortin g apporouch
 int apearOne(vector<int> &arr)
 {
     int n = arr.size();
@@ -10,6 +10,7 @@ int apearOne(vector<int> &arr)
     {
         if (arr[i] != arr[i + 1])
         {
+
             return arr[i];
         }
     }
@@ -63,7 +64,7 @@ int apearOne(vector<int> &arr)
 
     return -1;
 }
-//nlogon map approuches
+// nlogon map approuches
 int apearOne(vector<int> &arr)
 {
     int n = arr.size();
@@ -83,11 +84,13 @@ int apearOne(vector<int> &arr)
     return -1;
 }
 
-//xor appporches o(n ) best 
-int apearOne(vector<int> &arr){
-    int Xor=0;
-    for(int i=0; i<arr.size(); i++){
-        Xor= Xor^arr[i];
+// xor appporches o(n ) best
+int apearOne(vector<int> &arr)
+{
+    int Xor = 0;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        Xor = Xor ^ arr[i];
     }
     return Xor;
 }

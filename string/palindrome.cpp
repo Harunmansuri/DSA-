@@ -54,3 +54,13 @@ int main() {
 
     return 0;
 }
+//uppercase to lower case function
+void touppercae(){
+    // a to A
+    // implementation here
+      char ch = 'a';
+      if (ch >= 'a' && ch <= 'z') {
+        char uppercase = ch - 'a' + 'A';
+        cout << uppercase; // Output: A
+    
+}

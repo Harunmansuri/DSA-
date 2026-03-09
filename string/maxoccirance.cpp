@@ -9,7 +9,7 @@ char getmax(string s)
 
     // Traverse the string to count frequencies
     for (int i = 0; i < n; i++)
-    {
+    { 
         char ch = s[i];   // current character
         int number = 0;   // to store index for 'a' to 'z'
 

@@ -1,21 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int maxConsecutive(vector<int> & arr){
-    int n = arr.size();
-    int cnt=0;
-    int maxi=0;
-    for(int i=0; i<n-1; i++){
-         if(arr[i]==1){
-            cnt++;
-            maxi = max(maxi,cnt);
-         }
-         else{
-            cnt=0;
-         }
-    }
-    return cnt;
 
+
+int maxConsecutive(vector<int> &arr){
+    int n = arr.size();
+
+    int maxi=0;
+    for(int i=0; i<n; i++){
+        int cnt=0; 
+        for(int j=1; j<n; j++){
+            if(arr[i]==1){
+                cnt++;
+                maxi = max(maxi,cnt);
+            }
+            else{
+                break;
+            }
+
+        }
+    }
+    return maxi;
+}
+
+//optimized approach o(n) time complexity and o(1) space complexity
+int maxConsecutive(vector<int> &arr)
+{
+    int n = arr.size();
+    int cnt = 0;
+    int maxi = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+       
+        if (arr[i] == 1)
+        {
+            cnt++;
+            maxi = max(maxi, cnt);
+        }
+        else
+        {
+            cnt=0;
+        }
+    }
+    return maxi;
 }
 int main()
 {
@@ -24,7 +51,7 @@ int main()
 
     vector<int> arr;
     string num = "";
-    for (char ch : arr)
+    for (char ch : s)
     {
         if (isdigit(ch) || ch == '-')
         {
@@ -45,17 +72,20 @@ int main()
     }
 
     int ans = maxConsecutive(arr);
-    cout<<ans;
+    cout << ans;
     return 0;
 }
 
 /*
+
+
+// JavaScript implementation of the same logic
 function maxConsecBits(arr) {
     let maxCount = 0, count = 1;
-    
+
     // Loop through the array starting from the second element
     for (let i = 1; i < arr.length; i++) {
-    
+
         // If the current element is the same as the previous one
         // increment the count
         if (arr[i] === arr[i - 1]) {
