@@ -14,12 +14,14 @@ int longestConsequtive(vector<int> &arr, int n)
             curCnt = curCnt + 1;
             lastsmaller = arr[i];
         }
-        else
-            (arr[i] != lastsmaller)
+        else{
+               if(arr[i] != lastsmaller)
             {
                 curCnt = 1;
                 lastsmaller = arr[i];
             }
+        }
+           
         longest = max(longest, curCnt);
     }
     return longest;
